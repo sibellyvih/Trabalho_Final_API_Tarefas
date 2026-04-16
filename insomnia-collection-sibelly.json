@@ -1,0 +1,234 @@
+type: collection.insomnia.rest/5.0
+schema_version: "5.1"
+name: api-tarefas
+meta:
+  id: wrk_8dd10e8094334865823f5e1e7582bbca
+  created: 1776267247236
+  modified: 1776267247236
+  description: ""
+collection:
+  - name: Users
+    meta:
+      id: fld_d9980b129f074d21a84fd610a13b4dc6
+      created: 1776310722529
+      modified: 1776310756673
+      sortKey: -1776310722529
+      description: ""
+    children:
+      - url: http://localhost:3000/users/register
+        name: TESTE 1 — Cadastro
+        meta:
+          id: req_0a42c921b2a04de688656bc70f6aec07
+          created: 1776268457754
+          modified: 1776310744965
+          isPrivate: false
+          description: ""
+          sortKey: -1776310744942
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "name": "Sibelly",
+              "email": "sibelly@email.com",
+              "password": "123456"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/12.5.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:3000/users/login
+        name: TESTE 2 — Login
+        meta:
+          id: req_9d1d71374b9f40e1801b1d80634f33cf
+          created: 1776268679232
+          modified: 1776311498694
+          isPrivate: false
+          description: ""
+          sortKey: -1776310745042
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "email": "sibelly@email.com",
+              "password": "123456"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/12.5.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Tasks
+    meta:
+      id: fld_83c7140d82134ddaab11815a104332eb
+      created: 1776310856479
+      modified: 1776310890235
+      sortKey: -1776310856479
+      description: ""
+    children:
+      - url: http://localhost:3000/tasks
+        name: TESTE 1 — Criar tarefa
+        meta:
+          id: req_b00c38b20b654274bd2b9b42926e35ba
+          created: 1776269248591
+          modified: 1776311612718
+          isPrivate: false
+          description: ""
+          sortKey: -1776310861277
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "title": "Tarefa 17",
+              "description": "..."
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/12.5.0
+            description: ""
+            disabled: false
+          - name: Authorization
+            value: Bearer
+              eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzc2MzExNTAzLCJleHAiOjE3NzYzMTUxMDN9.zoZJKw4-6Hxr1KLK8jaOjw4dNlqO4n9DHVs-2UfgdY4
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:3000/tasks?status=pending&page=1&limit=20
+        name: Listar tarefas
+        meta:
+          id: req_6ad6538a69424eceb3659258e624c692
+          created: 1776270171186
+          modified: 1776311896883
+          isPrivate: false
+          description: ""
+          sortKey: -1776310861377
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/12.5.0
+            description: ""
+            disabled: false
+          - name: Authorization
+            value: Bearer
+              eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzc2MzExNTAzLCJleHAiOjE3NzYzMTUxMDN9.zoZJKw4-6Hxr1KLK8jaOjw4dNlqO4n9DHVs-2UfgdY4
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:3000/tasks/2
+        name: Atualizar tarefa
+        meta:
+          id: req_bb7984f2581247599b0fbbfa28d8347a
+          created: 1776291212733
+          modified: 1776310897900
+          isPrivate: false
+          description: ""
+          sortKey: -1776310861477
+        method: PUT
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "title": "Estudar API REST",
+              "description": "Projeto quase pronto",
+              "status": "completed"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/12.5.0
+            description: ""
+            disabled: false
+          - name: Authorization
+            value: Bearer
+              eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzc2Mjk4NTQ3LCJleHAiOjE3NzYzMDIxNDd9.qxiBquFT1tp9NEafHUBNSfcOKYbn-41vC8qdgWyHrSc
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:3000/tasks/1
+        name: Deletar tarefa
+        meta:
+          id: req_cdc367fdf9a94378a97e282a54e0cfc7
+          created: 1776294173734
+          modified: 1776310905058
+          isPrivate: false
+          description: ""
+          sortKey: -1776310861577
+        method: DELETE
+        headers:
+          - name: User-Agent
+            value: insomnia/12.5.0
+            description: ""
+            disabled: false
+          - name: Authorization
+            value: Bearer
+              eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzc2Mjk4NTQ3LCJleHAiOjE3NzYzMDIxNDd9.qxiBquFT1tp9NEafHUBNSfcOKYbn-41vC8qdgWyHrSc
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_c6f862b51f1a4b4c392a6b05d71ca43644453db9
+    created: 1776267247244
+    modified: 1776267247244
+environments:
+  name: Base Environment
+  meta:
+    id: env_c6f862b51f1a4b4c392a6b05d71ca43644453db9
+    created: 1776267247242
+    modified: 1776267247242
+    isPrivate: false
